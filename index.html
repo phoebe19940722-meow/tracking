@@ -439,17 +439,17 @@
       </div>
     </div>
 
-    <!-- DPEX -->
+    <!-- DPEX 台灣（迪比翼） -->
     <div class="card dpex">
       <div class="card-head">
         <p class="logo">DPEX</p>
-        <p class="sub">WORLDWIDE EXPRESS</p>
+        <p class="sub">台灣迪比翼國際快遞</p>
         <div class="stripe"></div>
       </div>
       <div class="card-body">
         <label for="dpex-awb">DPEX 提單號（AWB）</label>
         <input type="text" id="dpex-awb" placeholder="例：410610124650" autocomplete="off" oninput="updateLink('dpex')">
-        <p class="hint">12 位數字｜按查詢後到 DPEX 頁面 <strong>Ctrl + V</strong> 貼上（單號已自動複製）</p>
+        <p class="hint">按查詢後到 DPEX 台灣首頁，於「貨件查詢」<strong>Ctrl + V</strong> 貼上（單號已自動複製）</p>
         <a class="btn disabled" id="dpex-btn" href="#" target="_blank" rel="noopener" onclick="return beforeGo('dpex')">查詢 DPEX</a>
         <div class="last" id="dpex-last"></div>
       </div>
@@ -535,8 +535,8 @@
     ups:   awb => `https://www.ups.com/track?loc=zh_TW&tracknum=${encodeURIComponent(awb)}`,
     kerry: awb => `https://www.kerrytj.com/zh/Search/Search_Track.aspx?ftn=${encodeURIComponent(awb)}`,
     tcat:  awb => `https://www.t-cat.com.tw/Inquire/Trace.aspx?BillID=${encodeURIComponent(awb)}`,
-    // DPEX 官網表單為「一次最多 10 筆」格式，不吃 URL 參數，僅開啟查件頁；單號由 clipboard 自動複製
-    dpex:  awb => `https://dpex.com/track-and-trace/`,
+    // DPEX 台灣（迪比翼）首頁；查件表單在頁面上，不吃 URL 參數，單號由 clipboard 自動複製
+    dpex:  awb => `https://www.dpex.com.tw/zh/home`,
   };
 
   // 哪些物流的官網不吃 URL 參數帶入，需要靠剪貼簿輔助手動貼上
